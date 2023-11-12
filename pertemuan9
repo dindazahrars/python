@@ -1,0 +1,87 @@
+#nomor1
+# def fibonacci(n):
+#     a = [0, 1]
+#     for i in range(2, n):
+#         a.append(a[-1] + a[-2])
+#     return a
+
+# n = int(input("Masukkan panjang untuk deret fibonacci:"))
+# result = fibonacci(n)
+# print(result)
+
+#nomor2
+# import math
+
+# def volumetabung(jari, tinggi):
+#     # Menghitung volume tabung: π * r^2 * h
+#     volume = math.pi * jari**2 * tinggi
+#     return volume
+
+# jari = float(input("Masukkan nilai jari-jari tabung: "))
+# tinggi = float(input("Masukkan nilai tinggi tabung: "))
+
+# # Memanggil fungsi untuk menghitung volume tabung
+# hasil = volumetabung(jari, tinggi)
+
+# # Menampilkan hasil
+# print(f"Volume tabung dengan radius {jari} dan tinggi {tinggi} adalah: {hasil}")
+
+#nomor 3
+# def fungsi_total_rata(*nilai):
+#     total = sum(nilai)
+#     rata_rata = total / len(nilai)
+#     return total, rata_rata
+
+# nilai_input = input("Masukkan nilai-nilai (pisahkan dengan spasi): ")
+# nilai_list = [float(x) for x in nilai_input.split()]
+
+# total_nilai, rata_rata_nilai = fungsi_total_rata(*nilai_list)
+
+# print(f"Total nilai: {total_nilai}")
+# print(f"Rata-rata nilai: {rata_rata_nilai}")
+
+# #nomor4
+# def login():
+#     namauser = "daspro2023"
+#     passcode = "latihan"
+    
+#     kesempatan = 3
+
+#     while 0 < kesempatan:
+#         username = input("Masukkan username: ")
+#         password = input("Masukkan password: ")
+
+#         if username == namauser and password == passcode:
+#             print("Login berhasil!")
+#             break
+#         else:
+#             kesempatan -=1
+#             print(f"Login gagal! Kesempatan Anda {kesempatan}x lagi")
+            
+#     if kesempatan==0:
+#         print("Anda telah mencapai batas percobaan. Keluar dari menu login.")
+
+# # Memanggil fungsi login
+# login()
+
+#nomor5
+from datetime import datetime
+
+def hitung_selisih_waktu(start_time, end_time):
+    selisih = end_time - start_time
+    selisih_detik = selisih.total_seconds()
+    jam = int(selisih_detik // 3600)
+    sisa_detik = selisih_detik % 3600
+    menit = int(sisa_detik // 60)
+    detik = int(sisa_detik % 60)
+    return jam, menit, detik
+
+start_str = input("Masukkan waktu mulai (format HH:MM:SS): ")
+end_str = input("Masukkan waktu selesai (format HH:MM:SS): ")
+
+start_time = datetime.strptime(start_str, "%H:%M:%S")
+end_time = datetime.strptime(end_str, "%H:%M:%S")
+
+hasil_selisih = hitung_selisih_waktu(start_time, end_time)
+
+print(f"Selisih waktu: {hasil_selisih[0]:02d} jam {hasil_selisih[1]:02d} menit {hasil_selisih[2]:02d} detik")
